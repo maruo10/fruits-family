@@ -1,3 +1,4 @@
+package fruit;
 public class Apple implements Fruit{
 
     private String color;
@@ -5,7 +6,7 @@ public class Apple implements Fruit{
     private int taste;
     private String bland;
 
-    Apple(String color, int amount, int taste, String bland){
+    public Apple(String color, int amount, int taste, String bland){
         this.color = color;
         this.amount = amount;
         this.taste = taste;

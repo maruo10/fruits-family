@@ -1,12 +1,17 @@
+package family;
+import fruit.Apple;
+import fruit.Banana;
+import fruit.Fruit;
+
 public abstract class Human{
     private String name;
     
     Human(String name){
         this.name = name;
     }
-    abstract boolean isHungry();
-    abstract int isHappyPercent();
-    abstract void eat(String f, Fruit d);
+    public abstract boolean isHungry();
+    public abstract int isHappyPercent();
+    public abstract void eat(String f, Fruit d);
 
     public String hungry_voice(){
         return "hungry.";

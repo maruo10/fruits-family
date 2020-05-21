@@ -1,7 +1,13 @@
-
+import family.Ichiro;
+import family.Jiro;
+import family.Saburo;
+import family.Human;
+import fruit.Apple;
+import fruit.Banana;
+import fruit.Fruit;
 import java.util.*;
 
-class Main {
+public class Main {
   public static void main(String[] args) {
     Fruit[] apples = {
       new Apple("red", 100, 5, "fuji"),

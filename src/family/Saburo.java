@@ -1,10 +1,14 @@
+package family;
+import fruit.Apple;
+import fruit.Banana;
+import fruit.Fruit;
 
 public class Saburo extends Human{
     private int apple_value;
     private int apple_taste;
     private int banana_value;
     private int banana_taste;
-    Saburo(String name, int apple_value, int apple_taste, int banana_value, int banana_taste){
+    public Saburo(String name, int apple_value, int apple_taste, int banana_value, int banana_taste){
         super(name);
         this.apple_value = apple_value;
         this.apple_taste = apple_taste;
