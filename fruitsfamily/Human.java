@@ -6,7 +6,7 @@ public abstract class Human{
     }
     abstract boolean isHungry();
     abstract int isHappyPercent();
-    abstract void eat(String f, String[] d);
+    abstract void eat(String f, Fruit d);
 
     public String hungry_voice(){
         return "hungry.";

@@ -3,22 +3,22 @@ import java.util.*;
 
 class Main {
   public static void main(String[] args) {
-    String[][] apples = {
-      {"red", "100", "5", "fuji"},
-      {"magenda", "150", "2", "tsugaru"},
-      {"magenda", "80", "8", "ourin"},
-      {"magenda", "100", "9", "tsugaru"},
-      {"red", "200", "4", "fuji"},
+    Fruit[] apples = {
+      new Apple("red", 100, 5, "fuji"),
+      new Apple("magenda", 150, 2, "tsugaru"),
+      new Apple("magenda", 80, 8, "ourin"),
+      new Apple("magenda", 100, 9, "tsugaru"),
+      new Apple("red", 200, 4, "fuji"),
     };
     int appleCount = apples.length;
 
-    String[][] bananas = {
-      {"yellow", "50", "5", "3"},
-      {"green", "30", "2", "4"},
-      {"green", "40", "8", "4"},
-      {"white", "100", "9", "2"},
-      {"yellow", "45", "4", "4"},
-      {"yellow", "60", "8", "2" },
+    Fruit[] bananas = {
+      new Banana("yellow", 50, 5, 3),
+      new Banana("green", 30, 2, 4),
+      new Banana("green", 40, 8, 4),
+      new Banana("white", 100, 9, 2),
+      new Banana("yellow", 45, 4, 4),
+      new Banana("yellow", 60, 8, 2),
     };
     int bananaCount = bananas.length;
     
@@ -38,7 +38,7 @@ class Main {
 
       System.out.print("Do you want apple or banana>");
       String fruit = sc.next();
-      String[] data;
+      Fruit data;
       if (fruit.equals("apple")) {
         if (appleCount <= 0) {
           System.out.println("");

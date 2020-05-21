@@ -12,8 +12,6 @@ public class Saburo extends Human{
         this.banana_taste = banana_taste;
     }
 
-    @Override
-
     // 三郎が空腹かどうかを返す
     public boolean isHungry() {
         // 三郎のデータは配列になってて、１つ目がりんごの量、２つ目がりんごの味、３つ目がバナナの量、４つ目がバナナの味
@@ -27,15 +25,15 @@ public class Saburo extends Human{
     }
 
     // 三郎が食べる処理
-    public void eat(String fruit, String[] fruitData) {
+    public void eat(String fruit, Fruit fruitData) {
         // りんご
         if (fruit.equals("apple")) {
-            this.apple_value += Fruit.getAppleAmount(fruitData); // 量
-            this.apple_taste += Fruit.getAppleTaste(fruitData);  // 味
+            this.apple_value += fruitData.getAmount(); // 量
+            this.apple_taste += fruitData.getTaste();  // 味
         // バナナ
         } else {
-            this.banana_value += Fruit.getBananaAmount(fruitData);  // 量
-            this.banana_taste += Fruit.getBananaTaste(fruitData);   // 味
+            this.banana_value += fruitData.getAmount();  // 量
+            this.banana_taste += fruitData.getTaste();   // 味
         }
     }
 

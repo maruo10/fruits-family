@@ -17,14 +17,14 @@ public class Ichiro extends Human{
         // 一郎のデータは配列になってて、２つめが幸福度。
         return this.lack;
     }
-    public void eat(String fruit, String[] fruitData) {
+    public void eat(String fruit, Fruit fruitData) {
         // 一郎はりんごを食べない
         if (fruit.equals("apple")) {
             return;
         }
-        String color = Fruit.getBananaColor(fruitData);
-        int amount = Fruit.getBananaAmount(fruitData);
-        int taste = Fruit.getBananaTaste(fruitData);
+        String color = fruitData.getColor();
+        int amount = fruitData.getAmount();
+        int taste = fruitData.getTaste();
         int manpuku = this.fullness;
 
         // 白色のバナナは２倍の効果

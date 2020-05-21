@@ -8,8 +8,6 @@ public class Jiro extends Human{
         this.lack = lack;
     }
 
-    @Override
-
     // 次郎が空腹かどうかを返す
     public boolean isHungry() {
         // 次郎のデータは配列になってて、１つ目が満腹度。満腹度８０％を超えると空腹感はなくなる子。
@@ -23,13 +21,13 @@ public class Jiro extends Human{
     }
 
     // 次郎が食べる処理
-    public void eat(String fruit, String[] fruitData) {
+    public void eat(String fruit, Fruit fruitData) {
         // りんご
         if (fruit.equals("apple")) {
-            String color = Fruit.getAppleColor(fruitData);
-            int amount = Fruit.getAppleAmount(fruitData);
-            int taste = Fruit.getAppleTaste(fruitData);
-            String bland = Fruit.getAppleBland(fruitData);
+            String color = fruitData.getColor();
+            int amount = fruitData.getAmount();
+            int taste = fruitData.getTaste();
+            String bland = fruitData.getBland();
 
             // 効果
             int kouka = 1;
@@ -48,9 +46,9 @@ public class Jiro extends Human{
 
         // バナナ
         } else {
-            String color = Fruit.getBananaColor(fruitData);
-            int amount = Fruit.getBananaAmount(fruitData);
-            int taste = Fruit.getBananaTaste(fruitData);
+            String color = fruitData.getColor();
+            int amount = fruitData.getAmount();
+            int taste = fruitData.getTaste();
             // 白色のバナナは２倍の効果
             int kouka = 1;
             if (color.equals("white")) {
