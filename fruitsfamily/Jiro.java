@@ -1,19 +1,25 @@
 
 public class Jiro{
+    private int fullness;
+    private int lack;
+    Jiro(int fullness, int lack){
+        this.fullness = fullness;
+        this.lack = lack;
+    }
     // 次郎が空腹かどうかを返す
-    static boolean isHungry(int[] data) {
+    public boolean isHungry() {
         // 次郎のデータは配列になってて、１つ目が満腹度。満腹度８０％を超えると空腹感はなくなる子。
-        return data[0] < (2000*0.8);
+        return this.fullness < (2000*0.8);
     }
 
     // 次郎の幸福度を返す
-    static int isHappyPercent(int[] data) {
+    public int isHappyPercent() {
         // 次郎のデータは配列になってて、２つめが幸福度。
-        return data[1];
+        return this.lack;
     }
 
     // 次郎が食べる処理
-    static void eat(int[] personData, String fruit, String[] fruitData) {
+    public void eat(String fruit, String[] fruitData) {
         // りんご
         if (fruit.equals("apple")) {
             String color = Fruit.getAppleColor(fruitData);
@@ -31,10 +37,10 @@ public class Jiro{
             }
 
             // 量 * 味 を満腹度に加算する
-            personData[0] += amount * taste;
+            this.fullness += amount * taste;
 
             // 幸福度データを更新する。次郎は味・色・ブランドによって幸福度が上がる
-            personData[1] += taste * kouka;
+            this.lack += taste * kouka;
 
         // バナナ
         } else {
@@ -48,10 +54,10 @@ public class Jiro{
             }
 
             // 量 * 味 を満腹度に加算する
-            personData[0] += amount * taste * kouka;
+            this.fullness += amount * taste * kouka;
 
             // 幸福度データを更新する。次郎はバナナの時は量によって幸福度が上がる
-            personData[1] += amount;
+            this.lack += amount;
         }
     }
 }

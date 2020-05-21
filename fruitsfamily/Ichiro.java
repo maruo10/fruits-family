@@ -1,15 +1,21 @@
 
 public class Ichiro{
-    static boolean isHungry(int[] data) {
+    private int fullness;
+    private int lack;
+    Ichiro(int fullness, int lack){
+        this.fullness = fullness;
+        this.lack = lack;
+    }
+    public boolean isHungry() {
         // 一郎のデータは配列になってて、１つ目が満腹度。満腹度１００％にならないと空腹感はなくならない子。
-        return (data[0]) < (2000*1.0);
+        return this.fullness < (2000*1.0);
     }
       // 一郎の幸福度を返す
-    static int isHappyPercent(int[] data) {
+    public int isHappyPercent() {
         // 一郎のデータは配列になってて、２つめが幸福度。
-        return data[1];
+        return this.lack;
     }
-    static void eat(int[] personData, String fruit, String[] fruitData) {
+    public void eat(String fruit, String[] fruitData) {
         // 一郎はりんごを食べない
         if (fruit.equals("apple")) {
             return;
@@ -17,7 +23,7 @@ public class Ichiro{
         String color = Fruit.getBananaColor(fruitData);
         int amount = Fruit.getBananaAmount(fruitData);
         int taste = Fruit.getBananaTaste(fruitData);
-        int manpuku = personData[0];
+        int manpuku = this.fullness;
 
         // 白色のバナナは２倍の効果
         int kouka = 1;
@@ -29,9 +35,9 @@ public class Ichiro{
         manpuku += amount * taste * kouka;
 
         // 満腹度データを更新
-        personData[0] = manpuku;
+        this.fullness = manpuku;
 
         // 幸福度データを更新する。一郎は量によって幸福度が上がる
-        personData[1] = personData[1] + amount;
+        this.lack = this.lack + amount;
     }
 }

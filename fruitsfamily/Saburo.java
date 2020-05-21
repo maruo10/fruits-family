@@ -1,27 +1,37 @@
 
 public class Saburo{
+    private int apple_value;
+    private int apple_taste;
+    private int banana_value;
+    private int banana_taste;
+    Saburo(int apple_value, int apple_taste, int banana_value, int banana_taste){
+        this.apple_value = apple_value;
+        this.apple_taste = apple_taste;
+        this.banana_value = banana_value;
+        this.banana_taste = banana_taste;
+    }
     // 三郎が空腹かどうかを返す
-    static boolean isHungry(int[] data) {
+    public boolean isHungry() {
         // 三郎のデータは配列になってて、１つ目がりんごの量、２つ目がりんごの味、３つ目がバナナの量、４つ目がバナナの味
-        return (data[0]*data[1]+data[2]*data[3]) < (2000*0.95);
+        return (this.apple_value * this.apple_taste + this.banana_value * this.banana_taste) < (2000*0.95);
     }
     // 三郎の幸福度を返す
-    static int isHappyPercent(int[] data) {
+    public int isHappyPercent() {
         // 三郎のデータは配列になってて、１つ目がりんごの量、２つ目がりんごの味、３つ目がバナナの量、４つ目がバナナの味
         // 三郎の幸福度は味重視
-        return (data[1] * 2 + data[3] * 3);
+        return (this.apple_taste * 2 + this.banana_taste * 3);
     }
 
     // 三郎が食べる処理
-    static void eat(int[] personData, String fruit, String[] fruitData) {
+    public void eat(String fruit, String[] fruitData) {
         // りんご
         if (fruit.equals("apple")) {
-            personData[0] += Fruit.getAppleAmount(fruitData); // 量
-            personData[1] += Fruit.getAppleTaste(fruitData);  // 味
+            this.apple_value += Fruit.getAppleAmount(fruitData); // 量
+            this.apple_taste += Fruit.getAppleTaste(fruitData);  // 味
         // バナナ
         } else {
-            personData[2] += Fruit.getBananaAmount(fruitData);  // 量
-            personData[3] += Fruit.getBananaTaste(fruitData);   // 味
+            this.banana_value += Fruit.getBananaAmount(fruitData);  // 量
+            this.banana_taste += Fruit.getBananaTaste(fruitData);   // 味
         }
     }
 }
