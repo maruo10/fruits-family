@@ -1,11 +1,15 @@
 
-public class Jiro{
+public class Jiro extends Human{
     private int fullness;
     private int lack;
-    Jiro(int fullness, int lack){
+    Jiro(String name, int fullness, int lack){
+        super(name);
         this.fullness = fullness;
         this.lack = lack;
     }
+
+    @Override
+
     // 次郎が空腹かどうかを返す
     public boolean isHungry() {
         // 次郎のデータは配列になってて、１つ目が満腹度。満腹度８０％を超えると空腹感はなくなる子。
@@ -59,5 +63,15 @@ public class Jiro{
             // 幸福度データを更新する。次郎はバナナの時は量によって幸福度が上がる
             this.lack += amount;
         }
+    }
+
+    @Override
+
+    public String hungry_voice(){
+        return "腹減った";
+    }
+
+    public String not_hungry_voice(){
+        return "腹いっぱい";
     }
 }

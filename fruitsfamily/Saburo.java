@@ -1,15 +1,19 @@
 
-public class Saburo{
+public class Saburo extends Human{
     private int apple_value;
     private int apple_taste;
     private int banana_value;
     private int banana_taste;
-    Saburo(int apple_value, int apple_taste, int banana_value, int banana_taste){
+    Saburo(String name, int apple_value, int apple_taste, int banana_value, int banana_taste){
+        super(name);
         this.apple_value = apple_value;
         this.apple_taste = apple_taste;
         this.banana_value = banana_value;
         this.banana_taste = banana_taste;
     }
+
+    @Override
+
     // 三郎が空腹かどうかを返す
     public boolean isHungry() {
         // 三郎のデータは配列になってて、１つ目がりんごの量、２つ目がりんごの味、３つ目がバナナの量、４つ目がバナナの味
@@ -33,5 +37,11 @@ public class Saburo{
             this.banana_value += Fruit.getBananaAmount(fruitData);  // 量
             this.banana_taste += Fruit.getBananaTaste(fruitData);   // 味
         }
+    }
+
+    @Override
+
+    public String not_hungry_voice(){
+        return "腹いっぱい";
     }
 }

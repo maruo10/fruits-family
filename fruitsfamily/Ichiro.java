@@ -1,11 +1,13 @@
 
-public class Ichiro{
+public class Ichiro extends Human{
     private int fullness;
     private int lack;
-    Ichiro(int fullness, int lack){
+    Ichiro(String name, int fullness, int lack){
+        super(name);
         this.fullness = fullness;
         this.lack = lack;
     }
+
     public boolean isHungry() {
         // 一郎のデータは配列になってて、１つ目が満腹度。満腹度１００％にならないと空腹感はなくならない子。
         return this.fullness < (2000*1.0);
@@ -39,5 +41,11 @@ public class Ichiro{
 
         // 幸福度データを更新する。一郎は量によって幸福度が上がる
         this.lack = this.lack + amount;
+    }
+
+    @Override
+
+    public String hungry_voice(){
+        return "お腹すいた";
     }
 }

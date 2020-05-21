@@ -21,12 +21,8 @@ class Main {
       {"yellow", "60", "8", "2" },
     };
     int bananaCount = bananas.length;
-
-    String[] family = {"ichirou", "jirou", "saburou"};
-
-    Ichiro ichiro = new Ichiro(0, 0);
-    Jiro jiro = new Jiro(0, 0);
-    Saburo saburo = new Saburo(0, 0, 0, 0);
+    
+    Human[] family = {new Ichiro("ichiro", 0, 0), new Jiro("jiro", 0, 0), new Saburo("saburo", 0, 0, 0, 0)};
 
     Scanner sc = new Scanner(System.in);
 
@@ -40,7 +36,7 @@ class Main {
         break;
       }
 
-      System.out.print("Do you want apple or yellow>");
+      System.out.print("Do you want apple or banana>");
       String fruit = sc.next();
       String[] data;
       if (fruit.equals("apple")) {
@@ -73,38 +69,13 @@ class Main {
 
       int manpukuCount = 0;
       for (int i = 0; i < family.length; i++) {
-        switch (family[i]) {
-          case "ichirou":
-            if (ichiro.isHungry()) {
-              ichiro.eat(fruit, data);
-              if (!ichiro.isHungry()) {
-                manpukuCount++;
-              }
-            } else {
-              manpukuCount++;
-            }
-            break;
-          case "jirou":
-            if (jiro.isHungry()) {
-              jiro.eat(fruit, data);
-              if (!jiro.isHungry()) {
-                manpukuCount++;
-              }
-            } else {
-              manpukuCount++;
-            }
-            break;
-          case "saburou":
-            if (saburo.isHungry()) {
-              saburo.eat(fruit, data);
-              if (!saburo.isHungry()) {
-                manpukuCount++;
-              }
-            } else {
-              manpukuCount++;
-            }
-            break;
-
+        if(family[i].isHungry()) {
+          family[i].eat(fruit, data);
+          if(!family[i].isHungry()) {
+            manpukuCount++;
+          }
+        }else{
+          manpukuCount++;
         }
       }
 
@@ -113,36 +84,16 @@ class Main {
         System.out.println(" Game Clear !!!! game count is " + gameCount);
         System.out.println("");
         for (int i = 0; i < family.length; i++) {
-          System.out.print(family[i] + " : ");
-          switch (family[i]) {
-            case "ichirou":
-              System.out.print(ichiro.isHappyPercent() + "%\n");
-              break;
-            case "jirou":
-              System.out.print(jiro.isHappyPercent() + "%\n");
-              break;
-            case "saburou":
-              System.out.print(saburo.isHappyPercent() + "%\n");
-              break;
-          }
+          System.out.print(family[i].getName() + " : ");
+          System.out.print(family[i].isHappyPercent() + "%\n");
         }
         System.out.println("");
         sc.close();
         return;
       } else {
         for (int i = 0; i < family.length; i++) {
-          System.out.print(family[i] + " : ");
-          switch (family[i]) {
-            case "ichirou":
-              System.out.println(ichiro.isHungry() ? "hungry." : "not hungry");
-              break;
-            case "jirou":
-              System.out.println(jiro.isHungry() ? "hungry." : "not hungry");
-              break;
-            case "saburou":
-              System.out.println(saburo.isHungry() ? "hungry." : "not hungry");
-              break;
-          }
+          System.out.print(family[i].getName() + " : ");
+          System.out.println(family[i].isHungry() ? family[i].hungry_voice() : family[i].not_hungry_voice());
         }
         System.out.println("");
       }
@@ -152,18 +103,8 @@ class Main {
     System.out.println("GAME OVER!");
     System.out.println("");
     for (int i = 0; i < family.length; i++) {
-      System.out.print(family[i] + " : ");
-      switch (family[i]) {
-        case "ichirou":
-          System.out.println(ichiro.isHungry() ? "hungry." : "not hungry");
-          break;
-        case "jirou":
-          System.out.println(jiro.isHungry() ? "hungry." : "not hungry");
-          break;
-        case "saburou":
-          System.out.println(saburo.isHungry() ? "hungry." : "not hungry");
-          break;
-      }
+      System.out.print(family[i].getName() + " : ");
+      System.out.println(family[i].isHungry() ? family[i].hungry_voice() : family[i].not_hungry_voice());
     }
     System.out.println("");
 
