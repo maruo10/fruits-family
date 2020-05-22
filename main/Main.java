@@ -6,6 +6,7 @@ import main.src.family.Human;
 import main.src.fruit.Apple;
 import main.src.fruit.Banana;
 import main.src.fruit.Fruit;
+import main.src.print.Printer;
 import java.util.*;
 
 public class Main {
@@ -91,16 +92,16 @@ public class Main {
         System.out.println(" Game Clear !!!! game count is " + gameCount);
         System.out.println("");
         for (int i = 0; i < family.length; i++) {
-          System.out.print(family[i].getName() + " : ");
-          System.out.print(family[i].isHappyPercent() + "%\n");
+          Printer.print(family[i].getName());
+          Printer.print(family[i].isHappyPercent());
         }
         System.out.println("");
         sc.close();
         return;
       } else {
         for (int i = 0; i < family.length; i++) {
-          System.out.print(family[i].getName() + " : ");
-          System.out.println(family[i].isHungry() ? family[i].hungry_voice() : family[i].not_hungry_voice());
+          Printer.print(family[i].getName());
+          Printer.print(family[i].isHungry(), family[i].hungry_voice(), family[i].not_hungry_voice());
         }
         System.out.println("");
       }
@@ -110,8 +111,8 @@ public class Main {
     System.out.println("GAME OVER!");
     System.out.println("");
     for (int i = 0; i < family.length; i++) {
-      System.out.print(family[i].getName() + " : ");
-      System.out.println(family[i].isHungry() ? family[i].hungry_voice() : family[i].not_hungry_voice());
+      Printer.print(family[i].getName());
+      Printer.print(family[i].isHungry(), family[i].hungry_voice(), family[i].not_hungry_voice());
     }
     System.out.println("");
 
