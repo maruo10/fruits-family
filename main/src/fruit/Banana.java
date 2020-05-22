@@ -28,8 +28,4 @@ public class Banana implements Fruit{
     public int getValue(){
         return this.value;
     }
-
-    public String getBland(){
-        return "No Bland";
-    }
 }

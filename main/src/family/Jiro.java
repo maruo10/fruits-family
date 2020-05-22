@@ -30,7 +30,9 @@ public class Jiro extends Human{
             String color = fruitData.getColor();
             int amount = fruitData.getAmount();
             int taste = fruitData.getTaste();
-            String bland = fruitData.getBland();
+            // Appleクラスにしかないブランド情報を取得
+            Apple apple = (Apple)fruitData;
+            String bland = apple.getBland();
 
             // 効果
             int kouka = 1;

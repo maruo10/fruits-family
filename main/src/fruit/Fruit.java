@@ -7,5 +7,4 @@ public interface Fruit{
 
     public int getTaste();
 
-    public String getBland();
 }
