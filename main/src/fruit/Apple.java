@@ -1,16 +1,16 @@
-package fruit;
-public class Banana implements Fruit{
+package main.src.fruit;
+public class Apple implements Fruit{
 
     private String color;
     private int amount;
     private int taste;
-    private int value;
+    private String bland;
 
-    public Banana(String color, int amount, int taste, int value){
+    public Apple(String color, int amount, int taste, String bland){
         this.color = color;
         this.amount = amount;
         this.taste = taste;
-        this.value = value;
+        this.bland = bland;
     }
 
     public String getColor(){
@@ -18,18 +18,14 @@ public class Banana implements Fruit{
     }
 
     public int getAmount(){
-        return this.amount * this.value; 
+        return this.amount;
     }
 
     public int getTaste(){
         return this.taste;
     }
 
-    public int getValue(){
-        return this.value;
-    }
-
     public String getBland(){
-        return "No Bland";
+        return this.bland;
     }
 }

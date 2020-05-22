@@ -1,15 +1,14 @@
-package family;
-import fruit.Apple;
-import fruit.Banana;
-import fruit.Fruit;
+package main.src.family;
+import main.src.fruit.Apple;
+import main.src.fruit.Banana;
+import main.src.fruit.Fruit;
 
 public class Saburo extends Human{
     private int apple_value;
     private int apple_taste;
     private int banana_value;
     private int banana_taste;
-    public Saburo(String name, int apple_value, int apple_taste, int banana_value, int banana_taste){
-        super(name);
+    public Saburo(int apple_value, int apple_taste, int banana_value, int banana_taste){
         this.apple_value = apple_value;
         this.apple_taste = apple_taste;
         this.banana_value = banana_value;
@@ -39,6 +38,10 @@ public class Saburo extends Human{
             this.banana_value += fruitData.getAmount();  // 量
             this.banana_taste += fruitData.getTaste();   // 味
         }
+    }
+
+    public String getName(){
+        return "三郎";
     }
 
     @Override

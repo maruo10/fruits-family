@@ -1,13 +1,12 @@
-package family;
-import fruit.Apple;
-import fruit.Banana;
-import fruit.Fruit;
+package main.src.family;
+import main.src.fruit.Apple;
+import main.src.fruit.Banana;
+import main.src.fruit.Fruit;
 
 public class Ichiro extends Human{
     private int fullness;
     private int lack;
-    public Ichiro(String name, int fullness, int lack){
-        super(name);
+    public Ichiro(int fullness, int lack){
         this.fullness = fullness;
         this.lack = lack;
     }
@@ -45,6 +44,10 @@ public class Ichiro extends Human{
 
         // 幸福度データを更新する。一郎は量によって幸福度が上がる
         this.lack = this.lack + amount;
+    }
+
+    public String getName(){
+        return "一郎";
     }
 
     @Override

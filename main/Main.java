@@ -1,10 +1,11 @@
-import family.Ichiro;
-import family.Jiro;
-import family.Saburo;
-import family.Human;
-import fruit.Apple;
-import fruit.Banana;
-import fruit.Fruit;
+package main;
+import main.src.family.Ichiro;
+import main.src.family.Jiro;
+import main.src.family.Saburo;
+import main.src.family.Human;
+import main.src.fruit.Apple;
+import main.src.fruit.Banana;
+import main.src.fruit.Fruit;
 import java.util.*;
 
 public class Main {
