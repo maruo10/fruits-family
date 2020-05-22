@@ -29,7 +29,7 @@ public class Main {
     };
     int bananaCount = bananas.length;
     
-    Human[] family = {new Ichiro("ichiro", 0, 0), new Jiro("jiro", 0, 0), new Saburo("saburo", 0, 0, 0, 0)};
+    Human[] family = {new Ichiro(0, 0), new Jiro(0, 0), new Saburo(0, 0, 0, 0)};
 
     Scanner sc = new Scanner(System.in);
 
