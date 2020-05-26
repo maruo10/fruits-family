@@ -3,7 +3,7 @@ import main.src.fruit.Apple;
 import main.src.fruit.Banana;
 import main.src.fruit.Fruit;
 
-public class Jiro extends Human{
+public class Jiro extends Human implements Eatlave{
     private int fullness;
     private int lack;
     public Jiro(int fullness, int lack){
@@ -70,6 +70,11 @@ public class Jiro extends Human{
 
     public String getName(){
         return "二郎";
+    }
+
+    public void lackup(){
+        System.out.println("二郎は人が食べているのをみて幸せに鳴っている");
+        this.lack += 1;
     }
 
     @Override

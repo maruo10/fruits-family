@@ -3,6 +3,7 @@ import main.src.family.Ichiro;
 import main.src.family.Jiro;
 import main.src.family.Saburo;
 import main.src.family.Human;
+import main.src.family.Eatlave;
 import main.src.fruit.Apple;
 import main.src.fruit.Banana;
 import main.src.fruit.Fruit;
@@ -79,6 +80,14 @@ public class Main {
       for (int i = 0; i < family.length; i++) {
         if(family[i].isHungry()) {
           family[i].eat(fruit, data);
+          if(!(family[i] instanceof Eatlave)){
+            for(int x = 0; x < family.length; x++){
+              if(family[x] instanceof Eatlave){
+                Jiro j = (Jiro)family[x];
+                j.lackup();
+              }
+            }
+          }
           if(!family[i].isHungry()) {
             manpukuCount++;
           }
