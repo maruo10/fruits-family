@@ -1,12 +1,14 @@
-package main.src.family;
-import main.src.fruit.Apple;
-import main.src.fruit.Banana;
-import main.src.fruit.Fruit;
+package main.src.family.src.family;
+import main.src.fruit.src.fruit.Apple;
+import main.src.fruit.src.fruit.Banana;
+import main.src.fruit.src.fruit.Fruit;
+import main.src.scfruit.src.scfruit.Scfruit;
 
 public class Ichiro extends Human{
     private int fullness;
     private int lack;
     public Ichiro(int fullness, int lack){
+        Scfruit.check();
         this.fullness = fullness;
         this.lack = lack;
     }

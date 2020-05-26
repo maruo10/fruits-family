@@ -1,13 +1,13 @@
 package main;
-import main.src.family.Ichiro;
-import main.src.family.Jiro;
-import main.src.family.Saburo;
-import main.src.family.Human;
-import main.src.family.Eatlave;
-import main.src.fruit.Apple;
-import main.src.fruit.Banana;
-import main.src.fruit.Fruit;
-import main.src.print.Printer;
+import main.src.family.src.family.Ichiro;
+import main.src.family.src.family.Jiro;
+import main.src.family.src.family.Saburo;
+import main.src.family.src.family.Human;
+import main.src.family.src.family.Eatlave;
+import main.src.fruit.src.fruit.Apple;
+import main.src.fruit.src.fruit.Banana;
+import main.src.fruit.src.fruit.Fruit;
+import main.src.print.src.Printer;
 import java.util.*;
 
 public class Main {

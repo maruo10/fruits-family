@@ -1,4 +1,4 @@
-package main.src.print;
+package main.src.print.src;
 
 public class Printer{
 

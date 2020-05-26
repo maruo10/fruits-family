@@ -1,4 +1,4 @@
-package main.src.fruit;
+package main.src.fruit.src.fruit;
 public class Banana implements Fruit{
 
     private String color;

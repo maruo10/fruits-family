@@ -1,4 +1,5 @@
-package main.src.fruit;
+package main.src.fruit.src.fruit;
+import main.src.scfruit.src.scfruit.Scfruit;
 public class Apple implements Fruit{
 
     private String color;
@@ -7,6 +8,7 @@ public class Apple implements Fruit{
     private String bland;
 
     public Apple(String color, int amount, int taste, String bland){
+        Scfruit.check();
         this.color = color;
         this.amount = amount;
         this.taste = taste;
